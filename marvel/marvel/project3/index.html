@@ -13,97 +13,61 @@
 
 <body>
 
-    <div class="scene" id="scene">
+  <div class="scene" id="scene">
+  <div class="side-controls">
+    <button class="ctrl-btn" id="addBtn" title="Add contact"><i class="fa-solid fa-plus"></i></button>
+    <button class="ctrl-btn" id="upBtn"  title="Previous"><i class="fa-solid fa-arrow-up"></i></button>
+    <button class="ctrl-btn" id="downBtn" title="Next"><i class="fa-solid fa-arrow-down"></i></button>
+  </div>
 
-        <!-- Left: navigation buttons -->
-        <div class="side-controls">
-            <button class="ctrl-btn" id="addBtn" title="Add contact"><i class="fa-solid fa-plus"></i></button>
-            <button class="ctrl-btn" id="upBtn" title="Previous"><i class="fa-solid fa-arrow-up"></i></button>
-            <button class="ctrl-btn" id="downBtn" title="Next"><i class="fa-solid fa-arrow-down"></i></button>
-        </div>
-
-        <!-- Center: card stack -->
-        <div>
-            <div class="card-stack" id="cardStack">
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200" alt="Profile" class="profile-img">
-
-                    <h2>Fatima Uma</h2>
-
-                    <div class="info">
-
-                        <div class="labels">
-                            <p>Home town</p>
-                            <p>Bookings</p>
-                        </div>
-
-                        <div class="values">
-                            <p>Singapore</p>
-                            <p>3 times</p>
-                        </div>
-
-                    </div>
-
-                    <div class="buttons">
-
-                        <button class="call-btn">
-            <i class="fa-solid fa-phone"></i>
-            Call
-        </button>
-
-                        <button class="msg-btn">
-            Message
-        </button>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="counter" id="counter"></div>
-        </div>
-
-        <!-- Right: color dots -->
-        <div class="color-dots" id="colorDots">
-            <div class="dot active" style="background:#1a1a1a" data-color="#1a1a1a"></div>
-            <div class="dot" style="background:#8b5cf6" data-color="#8b5cf6"></div>
-            <div class="dot" style="background:#f97316" data-color="#f97316"></div>
-            <div class="dot" style="background:#10b981" data-color="#10b981"></div>
-        </div>
-
+  <div>
+    <div class="card-stack" id="cardStack">
+      <div class="empty-msg" id="emptyMsg">No contacts yet.<br>Click + to add one.</div>
     </div>
+    <div class="counter" id="counter"></div>
+  </div>
 
-    <!-- Add contact form -->
-    <div class="form-wrap" id="formWrap">
-        <h3>Add new contact</h3>
-        <label>Full name *</label>
-        <input required id="fName" placeholder="e.g. Fatima Uma" />
-        <label>Home town</label>
-        <input required id="fTown" placeholder="e.g. Singapore" />
-        <label>Bookings</label>
-        <input required id="fBookings" placeholder="e.g. 3 times" />
-        <label>Photo URL (optional)</label>
-        <input required id="fPhoto" placeholder="https://..." />
-        <label>Card colour</label>
-        <div class="form-colors" id="formColors">
-            <div class="form-dot active" style="background:#1a1a1a" data-color="#1a1a1a"></div>
-            <div class="form-dot" style="background:#8b5cf6" data-color="#8b5cf6"></div>
-            <div class="form-dot" style="background:#f97316" data-color="#f97316"></div>
-            <div class="form-dot" style="background:#10b981" data-color="#10b981"></div>
-            <div class="form-dot" style="background:#e11d48" data-color="#e11d48"></div>
-            <div class="form-dot" style="background:#0ea5e9" data-color="#0ea5e9"></div>
-            <div class="form-dot" style="background:#d97706" data-color="#d97706"></div>
-            <div class="form-dot" style="background:#6366f1" data-color="#6366f1"></div>
-        </div>
-        <div class="form-actions">
-            <button class="btn-cancel" id="cancelBtn">Cancel</button>
-            <button class="btn-save" id="saveBtn">Add card</button>
-        </div>
+  <div class="color-dots" id="colorDots">
+    <div class="dot active" style="background:#1a1a1a" data-color="#1a1a1a"></div>
+    <div class="dot"        style="background:#8b5cf6" data-color="#8b5cf6"></div>
+    <div class="dot"        style="background:#f97316" data-color="#f97316"></div>
+    <div class="dot"        style="background:#10b981" data-color="#10b981"></div>
+  </div>
+</div>
+
+<div class="form-wrap" id="formWrap">
+  <h3>Add new contact</h3>
+  <label>Full name *</label>
+  <input id="fName" placeholder="e.g. Fatima Uma" />
+  <label>Home town</label>
+  <input id="fTown" placeholder="e.g. Singapore" />
+  <label>Purpose</label>
+  <input id="fBookings" placeholder="e.g. to call" />
+  <label>Photo URL (optional)</label>
+  <input id="fPhoto" placeholder="https://..." />
+  <label>Card colour</label>
+  <div class="form-colors" id="formColors">
+    <div class="form-dot active" style="background:#1a1a1a" data-color="#1a1a1a"></div>
+    <div class="form-dot"        style="background:#8b5cf6" data-color="#8b5cf6"></div>
+    <div class="form-dot"        style="background:#f97316" data-color="#f97316"></div>
+    <div class="form-dot"        style="background:#10b981" data-color="#10b981"></div>
+    <div class="form-dot"        style="background:#e11d48" data-color="#e11d48"></div>
+    <div class="form-dot"        style="background:#0ea5e9" data-color="#0ea5e9"></div>
+    <div class="form-dot"        style="background:#d97706" data-color="#d97706"></div>
+    <div class="form-dot"        style="background:#6366f1" data-color="#6366f1"></div>
+  </div>
+  <div class="form-actions">
+    <button class="btn-cancel" id="cancelBtn">Cancel</button>
+    <button class="btn-save"   id="saveBtn">Add card</button>
+  </div>
+</div>
     </div>
 
 
     <script src="script.js"></script>
 
 </body>
+
+</html> 
 
 </html>
